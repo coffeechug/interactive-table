@@ -1,63 +1,47 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2022.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <title>Interactive Table</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Interactive Table&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.min.js"&gt;&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;Interactive Table&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;table id="myTable" class="display"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Category&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Nickname&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;th&gt;Prompt&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const SHEET_ID = '1YgQpzKW0bobuaWO1NY5j4txhvOpsyd3t-48Nw4bgzcM';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const PUBLIC_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/pubhtml`;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>Tabletop.init({</p>
-<p class="p1"><span class="Apple-converted-space">      </span>key: PUBLIC_URL,</p>
-<p class="p1"><span class="Apple-converted-space">      </span>callback: (data, tabletop) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>$('#myTable').DataTable({</p>
-<p class="p1"><span class="Apple-converted-space">          </span>data: data,</p>
-<p class="p1"><span class="Apple-converted-space">          </span>columns: [</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ data: 'categories' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ data: 'nickname' },</p>
-<p class="p1"><span class="Apple-converted-space">            </span>{ data: 'prompts' }</p>
-<p class="p1"><span class="Apple-converted-space">          </span>]</p>
-<p class="p1"><span class="Apple-converted-space">        </span>});</p>
-<p class="p1"><span class="Apple-converted-space">      </span>},</p>
-<p class="p1"><span class="Apple-converted-space">      </span>simpleSheet: true</p>
-<p class="p1"><span class="Apple-converted-space">    </span>});</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <h1>Interactive Table</h1>
+  <table id="myTable" class="display">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Nickname</th>
+        <th>Prompt</th>
+      </tr>
+    </thead>
+  </table>
+  <script>
+    const SHEET_ID = '1YgQpzKW0bobuaWO1NY5j4txhvOpsyd3t-48Nw4bgzcM';
+    const PUBLIC_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
+
+    Papa.parse(PUBLIC_URL, {
+      download: true,
+      header: true,
+      complete: function (results) {
+        $('#myTable').DataTable({
+          data: results.data,
+          columns: [
+            { data: 'categories' },
+            { data: 'nickname' },
+            { data: 'prompts' }
+          ]
+        });
+      }
+    });
+  </script>
 </body>
 </html>
